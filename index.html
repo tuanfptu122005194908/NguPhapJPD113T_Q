@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JPD113 - Ngữ Pháp Tiếng Nhật</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* Animated background particles */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          );
+        animation: float 15s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 25px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3),
+          0 0 100px rgba(102, 126, 234, 0.2);
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        animation: slideUp 0.8s ease-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 50px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        animation: rotate 20s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .header h1 {
+        font-size: 3em;
+        margin-bottom: 15px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3),
+          0 0 30px rgba(255, 255, 255, 0.3);
+        position: relative;
+        z-index: 1;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.02);
+        }
+      }
+
+      .header p {
+        font-size: 1.3em;
+        opacity: 0.95;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease-out 0.3s both;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 0.95;
+          transform: translateY(0);
+        }
+      }
+
+      .nav {
+        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 25px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-bottom: 4px solid transparent;
+        border-image: linear-gradient(90deg, #667eea, #764ba2) 1;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-btn {
+        background: white;
+        border: 2px solid transparent;
+        background-image: linear-gradient(white, white),
+          linear-gradient(135deg, #667eea, #764ba2);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        color: #667eea;
+        padding: 14px 28px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1.05em;
+        font-weight: 700;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+      }
+
+      .nav-btn:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .nav-btn span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .nav-btn:hover,
+      .nav-btn.active {
+        color: white;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+      }
+
+      .nav-btn.active::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .content {
+        padding: 50px;
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+      }
+
+      .section {
+        display: none;
+      }
+
+      .section.active {
+        display: block;
+        animation: fadeInSlide 0.6s ease-out;
+      }
+
+      @keyframes fadeInSlide {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .grammar-box {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 30px;
+        margin: 25px 0;
+        border-radius: 20px;
+        border-left: 6px solid #667eea;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .grammar-box::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(102, 126, 234, 0.05) 0%,
+          transparent 70%
+        );
+        transition: transform 0.6s ease;
+      }
+
+      .grammar-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      }
+
+      .grammar-box:hover::before {
+        transform: rotate(180deg);
+      }
+
+      .grammar-box h2 {
+        color: #667eea;
+        margin-bottom: 20px;
+        font-size: 2em;
+        position: relative;
+        z-index: 1;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .grammar-box h3 {
+        color: #764ba2;
+        margin: 25px 0 15px 0;
+        font-size: 1.5em;
+        position: relative;
+        z-index: 1;
+      }
+
+      .formula {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px 0;
+        border: 3px dashed #667eea;
+        font-family: "Courier New", monospace;
+        font-size: 1.15em;
+        color: #333;
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .formula::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(102, 126, 234, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .formula:hover::before {
+        left: 100%;
+      }
+
+      .formula:hover {
+        transform: scale(1.02);
+        border-color: #764ba2;
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
+      }
+
+      .example {
+        background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+        padding: 18px;
+        border-radius: 12px;
+        margin: 15px 0;
+        border-left: 5px solid #ffc107;
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .example:hover {
+        transform: translateX(5px);
+        box-shadow: 0 6px 25px rgba(255, 193, 7, 0.3);
+      }
+
+      .example strong {
+        color: #e65100;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.6s ease-out;
+      }
+
+      th,
+      td {
+        padding: 18px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+        transition: all 0.3s ease;
+      }
+
+      th {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.9em;
+      }
+
+      tbody tr {
+        transition: all 0.3s ease;
+      }
+
+      tbody tr:hover {
+        background: linear-gradient(90deg, #f5f7fa 0%, #e8ecf4 100%);
+        transform: scale(1.01);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      tbody tr:hover td {
+        color: #667eea;
+      }
+
+      .note {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        padding: 20px;
+        border-radius: 12px;
+        margin: 20px 0;
+        border-left: 5px solid #2196f3;
+        box-shadow: 0 5px 20px rgba(33, 150, 243, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .note:hover {
+        transform: translateX(5px);
+        box-shadow: 0 8px 30px rgba(33, 150, 243, 0.3);
+      }
+
+      .note strong {
+        color: #1976d2;
+      }
+
+      ul,
+      ol {
+        margin-left: 35px;
+        line-height: 2;
+      }
+
+      li {
+        margin: 12px 0;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      li:hover {
+        transform: translateX(5px);
+        color: #667eea;
+      }
+
+      .highlight {
+        background: linear-gradient(120deg, #ffd700 0%, #ffed4e 100%);
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 700;
+        box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .highlight:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+      }
+
+      .japanese {
+        font-size: 1.3em;
+        color: #d32f2f;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px rgba(211, 47, 47, 0.2);
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .japanese:hover {
+        transform: scale(1.05);
+        color: #b71c1c;
+      }
+
+      /* Styling cho phần Contact - Footer */
+      #contact {
+        padding: 5rem 0 3rem;
+        background: linear-gradient(
+          180deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #contact::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+        background-size: 200% 100%;
+        animation: gradientMove 3s ease infinite;
+      }
+
+      @keyframes gradientMove {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      #contact::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(102, 126, 234, 0.1) 0%,
+          transparent 70%
+        );
+        animation: rotate 30s linear infinite;
+        pointer-events: none;
+      }
+
+      /* Nội dung tiêu đề */
+      .header-content {
+        text-align: center;
+        margin-bottom: 3.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 1.2rem;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+        animation: titlePulse 3s ease-in-out infinite;
+      }
+
+      @keyframes titlePulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.03);
+        }
+      }
+
+      .subtitle {
+        color: #e0e7ff;
+        font-size: 1.2rem;
+        opacity: 0.9;
+        letter-spacing: 0.5px;
+      }
+
+      /* Khung chứa các liên kết */
+      .contact-links-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      @media (min-width: 768px) {
+        .contact-links-wrapper {
+          flex-direction: row;
+          gap: 3rem;
+        }
+      }
+
+      /* Styling chung cho các liên kết */
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.3rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        color: white;
+        font-size: 1.05rem;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3),
+          0 0 40px rgba(102, 126, 234, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .contact-link:hover::before {
+        left: 100%;
+      }
+
+      .contact-link:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
+          0 0 60px rgba(102, 126, 234, 0.4);
+      }
+
+      .icon {
+        width: 1.8rem;
+        height: 1.8rem;
+        transition: transform 0.4s ease;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      }
+
+      .contact-link:hover .icon {
+        transform: rotate(360deg) scale(1.2);
+      }
+
+      .link-text {
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+
+      /* Styling riêng cho Facebook link */
+      .facebook-link {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        border: 2px solid rgba(37, 99, 235, 0.5);
+      }
+
+      .facebook-link:hover {
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        border-color: #60a5fa;
+      }
+
+      /* Styling riêng cho Email link */
+      .email-link {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        border: 2px solid rgba(220, 38, 38, 0.5);
+      }
+
+      .email-link:hover {
+        background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+        border-color: #f87171;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Ngữ Pháp JPD113</h1>
+        <p>Combo Ngữ Pháp Hủy Diệt - Tiếng Nhật Cơ Bản</p>
+      </div>
+
+      <div class="nav">
+        <button class="nav-btn" onclick="showSection(0)">
+          Combo 1: Cơ Bản
+        </button>
+        <button class="nav-btn" onclick="showSection(1)">
+          Combo 2: Động Từ
+        </button>
+      </div>
+
+      <div class="content">
+        <!-- COMBO 1 -->
+        <div class="section active">
+          <div class="grammar-box">
+            <h2>1. Cấu trúc khẳng định</h2>
+            <div class="formula">N1 + は + N2 + です = N1 là N2</div>
+            <ul>
+              <li>N1 là chủ ngữ, chủ đề</li>
+              <li><span class="highlight">は</span> là trợ từ, đọc là 'wa'</li>
+              <li>N2 là tên, nghề nghiệp, quốc tịch, tuổi</li>
+              <li>
+                <span class="highlight">です</span> dùng trong câu khẳng định,
+                thể hiện sự lịch sự
+              </li>
+            </ul>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">わたしはVươngです。</strong><br />
+              → Tôi là Vương.
+            </div>
+            <div class="example">
+              <strong class="japanese">わたしはがくせいです。</strong><br />
+              → Tôi là học sinh.
+            </div>
+            <div class="example">
+              <strong class="japanese">わたしはベトナムじんです。</strong><br />
+              → Tôi là người Việt Nam.
+            </div>
+            <div class="example">
+              <strong class="japanese">わたしは20さいです。</strong><br />
+              → Tôi 20 tuổi.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>2. Cấu trúc phủ định</h2>
+            <div class="formula">
+              N1 + は + N2 + ではありません = N1 không là N2
+            </div>
+            <div class="note">
+              <strong>Lưu ý:</strong> Trong văn nói, dùng
+              <span class="japanese">じゃありません</span> (jaarimasen) để thay
+              cho <span class="japanese">ではありません</span> (dewaarimasen).
+            </div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">わたしはChươngではありません。</strong
+              ><br />
+              → Tôi không phải Chương.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>3. Câu hỏi Yes-No</h2>
+            <div class="formula">
+              N1 + は + N2 + ですか = N1 là N2 phải không?
+            </div>
+            <h3>Cách trả lời:</h3>
+            <ul>
+              <li>
+                <strong>Yes:</strong>
+                <span class="japanese">はい + N2 + です</span>
+              </li>
+              <li>
+                <strong>No:</strong>
+                <span class="japanese">いいえ + N2 + ではありません</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="grammar-box">
+            <h2>4. Câu hỏi có từ để hỏi</h2>
+            <div class="formula">N + は + いつ/どちら/なん + ですか</div>
+            <ul>
+              <li><span class="japanese">いつ</span> = khi nào</li>
+              <li><span class="japanese">どちら</span> = ở đâu</li>
+              <li><span class="japanese">なん</span> = cái gì</li>
+            </ul>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">たんじょうびはいつですか。</span><br />
+              → Sinh nhật là khi nào?<br />
+              <strong>A:</strong> <span class="japanese">5がつ8にちです。</span
+              ><br />
+              → Ngày 8 tháng 5.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>5. Cấu trúc sở hữu</h2>
+            <div class="formula">N1 + の + N2 = N2 của/thuộc về N1</div>
+            <div class="note">
+              <strong>の</strong> là trợ từ, nghĩa là 'của, thuộc về', dùng để
+              nối 2 danh từ. N1 làm rõ nghĩa cho N2.
+            </div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese"
+                >NghiaさんはFPTだいがくのがくせいです。</strong
+              ><br />
+              → Nghĩa là sinh viên của trường đại học FPT.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>6. Cấu trúc 'và, với, cùng với'</h2>
+            <div class="formula">N1 + と + N2 = N1 và/với/cùng với N2</div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese"
+                >わたしのしゅみはえいがとおんがくです。</strong
+              ><br />
+              → Sở thích của tôi là xem phim và nghe nhạc.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>7. Cấu trúc 'cũng'</h2>
+            <div class="formula">N + も = N cũng</div>
+            <div class="note">
+              <strong>Cách dùng:</strong> Dùng khi thông tin và chủ đề của câu
+              giống với thông tin và chủ đề của câu trước đó.
+            </div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese"
+                >Nghĩaさんはがくせいです。Danhさんもがくせいです。</strong
+              ><br />
+              → Nghĩa là sinh viên. Danh cũng là sinh viên.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>8. Định vị từ (Demonstratives)</h2>
+            <table>
+              <tr>
+                <th></th>
+                <th>Này (gần người nói)</th>
+                <th>Đó (gần người nghe)</th>
+                <th>Kia (xa cả hai)</th>
+              </tr>
+              <tr>
+                <td><strong>Chỉ vật</strong></td>
+                <td class="japanese">これ</td>
+                <td class="japanese">それ</td>
+                <td class="japanese">あれ</td>
+              </tr>
+              <tr>
+                <td><strong>Chỉ vật, người</strong></td>
+                <td class="japanese">この</td>
+                <td class="japanese">その</td>
+                <td class="japanese">あの</td>
+              </tr>
+              <tr>
+                <td><strong>Chỉ nơi chốn</strong></td>
+                <td class="japanese">ここ / こちら</td>
+                <td class="japanese">そこ / そちら</td>
+                <td class="japanese">あそこ / あちら</td>
+              </tr>
+            </table>
+
+            <h3>Nhận biết:</h3>
+            <ul>
+              <li>
+                <span class="japanese">これ / それ / あれ</span>: đứng sau luôn
+                là trợ từ <span class="japanese">は, も</span>
+              </li>
+              <li>
+                <span class="japanese">この / その / あの</span>: đứng sau là
+                một danh từ
+              </li>
+            </ul>
+
+            <h3>Ví dụ - Chỉ vật:</h3>
+            <div class="example">
+              <strong class="japanese">これはとけいです。</strong><br />
+              → Cái này là đồng hồ.
+            </div>
+
+            <h3>Ví dụ - Chỉ người:</h3>
+            <div class="example">
+              <strong class="japanese">あのひとはVuongさんです。</strong><br />
+              → Người kia là Vương. (<span class="japanese">ひと</span> = người)
+            </div>
+
+            <h3>Ví dụ - Chỉ địa điểm:</h3>
+            <div class="example">
+              <strong class="japanese">ここはきょうしつです。</strong><br />
+              → Chỗ này là lớp học.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>9. Câu hỏi với định vị từ</h2>
+            <h3>Hỏi vật:</h3>
+            <div class="formula">これ/それ/あれ + は + なん + ですか</div>
+            <h3>Hỏi người:</h3>
+            <div class="formula">
+              この/その/あの + ひと + は + だれ + ですか
+            </div>
+            <div class="note"><span class="japanese">だれ</span> = ai</div>
+            <h3>Hỏi địa điểm:</h3>
+            <div class="formula">N + は + どこ + ですか</div>
+            <div class="note">
+              <span class="japanese">どちら</span> là kính ngữ của
+              <span class="japanese">どこ</span>
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>10. Đếm số lượng (cái)</h2>
+            <table>
+              <tr>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+              </tr>
+              <tr>
+                <td>1 cái</td>
+                <td class="japanese">ひとつ</td>
+                <td>hitotsu</td>
+                <td>6 cái</td>
+                <td class="japanese">むっつ</td>
+                <td>muttsu</td>
+              </tr>
+              <tr>
+                <td>2 cái</td>
+                <td class="japanese">ふたつ</td>
+                <td>futatsu</td>
+                <td>7 cái</td>
+                <td class="japanese">ななつ</td>
+                <td>nanatsu</td>
+              </tr>
+              <tr>
+                <td>3 cái</td>
+                <td class="japanese">みっつ</td>
+                <td>mittsu</td>
+                <td>8 cái</td>
+                <td class="japanese">やっつ</td>
+                <td>yattsu</td>
+              </tr>
+              <tr>
+                <td>4 cái</td>
+                <td class="japanese">よっつ</td>
+                <td>yottsu</td>
+                <td>9 cái</td>
+                <td class="japanese">ここのつ</td>
+                <td>kokonotsu</td>
+              </tr>
+              <tr>
+                <td>5 cái</td>
+                <td class="japanese">いつつ</td>
+                <td>itsutsu</td>
+                <td>10 cái</td>
+                <td class="japanese">とお</td>
+                <td>too</td>
+              </tr>
+            </table>
+            <div class="note">
+              <strong>Lưu ý:</strong> Từ 11 cái trở lên, sử dụng số đếm và không
+              thêm <span class="japanese">つ</span> vào sau.
+            </div>
+            <div class="formula">N + を + (số lượng) + ください</div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">リンゴをいつつください。</strong><br />
+              → Vui lòng cho tôi 5 cái táo.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>11. Hỏi giá tiền</h2>
+            <div class="formula">
+              N + は + いくら + ですか = N bao nhiêu tiền?
+            </div>
+
+            <h3>Đếm 100 → 999:</h3>
+            <table>
+              <tr>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+              </tr>
+              <tr>
+                <td>100</td>
+                <td class="japanese">ひゃく</td>
+                <td>hyaku</td>
+              </tr>
+              <tr>
+                <td>200</td>
+                <td class="japanese">にひゃく</td>
+                <td>nihyaku</td>
+              </tr>
+              <tr>
+                <td>300</td>
+                <td class="japanese">さんびゃく</td>
+                <td>sanbyaku</td>
+              </tr>
+              <tr>
+                <td>400</td>
+                <td class="japanese">よんひゃく</td>
+                <td>yonhyaku</td>
+              </tr>
+              <tr>
+                <td>500</td>
+                <td class="japanese">ごひゃく</td>
+                <td>gohyaku</td>
+              </tr>
+              <tr>
+                <td>600</td>
+                <td class="japanese">ろっぴゃく</td>
+                <td>roppyaku</td>
+              </tr>
+              <tr>
+                <td>700</td>
+                <td class="japanese">ななひゃく</td>
+                <td>nanahyaku</td>
+              </tr>
+              <tr>
+                <td>800</td>
+                <td class="japanese">はっぴゃく</td>
+                <td>happyaku</td>
+              </tr>
+              <tr>
+                <td>900</td>
+                <td class="japanese">きゅうひゃく</td>
+                <td>kyuhyaku</td>
+              </tr>
+            </table>
+
+            <h3>Đếm 1000 → 9999:</h3>
+            <table>
+              <tr>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+              </tr>
+              <tr>
+                <td>1000</td>
+                <td class="japanese">せん</td>
+                <td>sen</td>
+              </tr>
+              <tr>
+                <td>2000</td>
+                <td class="japanese">にせん</td>
+                <td>nisen</td>
+              </tr>
+              <tr>
+                <td>3000</td>
+                <td class="japanese">さんぜん</td>
+                <td>sanzen</td>
+              </tr>
+              <tr>
+                <td>4000</td>
+                <td class="japanese">よんせん</td>
+                <td>yonsen</td>
+              </tr>
+              <tr>
+                <td>5000</td>
+                <td class="japanese">ごせん</td>
+                <td>gosen</td>
+              </tr>
+              <tr>
+                <td>6000</td>
+                <td class="japanese">ろくせん</td>
+                <td>rokusen</td>
+              </tr>
+              <tr>
+                <td>7000</td>
+                <td class="japanese">ななせん</td>
+                <td>nanasen</td>
+              </tr>
+              <tr>
+                <td>8000</td>
+                <td class="japanese">はっせん</td>
+                <td>hassen</td>
+              </tr>
+              <tr>
+                <td>9000</td>
+                <td class="japanese">きゅうせん</td>
+                <td>kyuusen</td>
+              </tr>
+            </table>
+
+            <h3>Đếm 10000 → 99999:</h3>
+            <table>
+              <tr>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+              </tr>
+              <tr>
+                <td>10000</td>
+                <td class="japanese">いちまん</td>
+                <td>ichiman</td>
+              </tr>
+              <tr>
+                <td>20000</td>
+                <td class="japanese">にまん</td>
+                <td>niman</td>
+              </tr>
+              <tr>
+                <td>30000</td>
+                <td class="japanese">さんまん</td>
+                <td>sanman</td>
+              </tr>
+              <tr>
+                <td>40000</td>
+                <td class="japanese">よんまん</td>
+                <td>yonman</td>
+              </tr>
+              <tr>
+                <td>50000</td>
+                <td class="japanese">ごまん</td>
+                <td>goman</td>
+              </tr>
+              <tr>
+                <td>60000</td>
+                <td class="japanese">ろくまん</td>
+                <td>rokuman</td>
+              </tr>
+              <tr>
+                <td>70000</td>
+                <td class="japanese">ななまん</td>
+                <td>nanaman</td>
+              </tr>
+              <tr>
+                <td>80000</td>
+                <td class="japanese">はちまん</td>
+                <td>hachiman</td>
+              </tr>
+              <tr>
+                <td>90000</td>
+                <td class="japanese">きゅうまん</td>
+                <td>kyuuman</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="grammar-box">
+            <h2>12. Hỏi từ/câu trong tiếng nước khác</h2>
+            <div class="formula">
+              「Từ/câu」+ は + ___ご + で + なん + ですか
+            </div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese"
+                >「すみません」はベトナムごでなんですか。</strong
+              ><br />
+              → 「すみません」trong tiếng Việt là gì?<br />
+              <strong class="japanese">「Xin lỗi」です。</strong><br />
+              → Là 「Xin lỗi」
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>13. Sở hữu cá nhân</h2>
+            <div class="formula">N1 + の + N2 = N2 thuộc sở hữu của N1</div>
+            <div class="formula">N1 + は + だれの + N2 + ですか</div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">これはだれのほんですか。</span><br />
+              → Quyển sách này của ai?<br />
+              <strong>A:</strong>
+              <span class="japanese">Longさんのほんです。</span><br />
+              → Quyển sách của Long.
+            </div>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">このほんはだれのですか。</span><br />
+              → Quyển sách này của ai?<br />
+              <strong>A:</strong> <span class="japanese">Longさんのです。</span
+              ><br />
+              → Của Long.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>14. Hỏi về xuất xứ</h2>
+            <div class="formula">
+              これ/それ/あれ + は + どこ + の + N2 + ですか
+            </div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">これはどこのテレビですか。</span><br />
+              → TV này của hãng nào?<br />
+              <strong>A:</strong>
+              <span class="japanese">それはTCLのテレビです。</span><br />
+              → TV đó của hãng TCL.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>15. Hỏi về thể loại</h2>
+            <div class="formula">
+              これ/それ/あれ + は + なん + の + N2 + ですか
+            </div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">これはなんのざっしですか。</span><br />
+              → Tạp chí này thể loại gì?<br />
+              <strong>A:</strong>
+              <span class="japanese">これはにほんごのざっしです。</span><br />
+              → Tạp chí này thể loại Nhật Bản.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>16. Hỏi tầng</h2>
+            <div class="formula">N + は + なん + がい + ですか</div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">くつやはなんがいですか。</span><br />
+              → Cửa hàng giày ở tầng mấy?<br />
+              <strong>A:</strong> <span class="japanese">2かいです。</span
+              ><br />
+              → Tầng 2.
+            </div>
+          </div>
+        </div>
+
+        <!-- COMBO 3 -->
+        <div class="section">
+          <div class="grammar-box">
+            <h2>1. V-ます (Động từ dạng lịch sự)</h2>
+            <div class="note">
+              <span class="japanese">ます</span> là dạng động từ biểu thị thái
+              độ lịch sự với người nghe, thể hiện hành động ở hiện tại hoặc
+              tương lai.
+            </div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">まいばんきょします。</strong><br />
+              → Mỗi tối đều học.
+            </div>
+
+            <h3>Từ vựng thời gian:</h3>
+            <table>
+              <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Nghĩa</th>
+                <th>Thời gian</th>
+              </tr>
+              <tr>
+                <td class="japanese">おととい</td>
+                <td>ototoi</td>
+                <td>hôm kia</td>
+                <td>quá khứ</td>
+              </tr>
+              <tr>
+                <td class="japanese">きのう</td>
+                <td>kinou</td>
+                <td>hôm qua</td>
+                <td>quá khứ</td>
+              </tr>
+              <tr>
+                <td class="japanese">きょう</td>
+                <td>kyō</td>
+                <td>hôm nay</td>
+                <td>hiện tại</td>
+              </tr>
+              <tr>
+                <td class="japanese">あした</td>
+                <td>ashita</td>
+                <td>ngày mai</td>
+                <td>tương lai</td>
+              </tr>
+              <tr>
+                <td class="japanese">あさって</td>
+                <td>asatte</td>
+                <td>ngày mốt</td>
+                <td>tương lai</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="grammar-box">
+            <h2>2. Cách chia động từ V-ます</h2>
+            <table>
+              <tr>
+                <th>V-ます</th>
+                <th>Quá khứ</th>
+                <th>Hiện tại + Tương lai</th>
+              </tr>
+              <tr>
+                <td><strong>Khẳng định</strong></td>
+                <td class="japanese">V-ました</td>
+                <td class="japanese">V-ます</td>
+              </tr>
+              <tr>
+                <td><strong>Phủ định</strong></td>
+                <td class="japanese">V-ませんでした</td>
+                <td class="japanese">V-ません</td>
+              </tr>
+            </table>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">きのうねませんでした。</strong><br />
+              → Hôm qua không ngủ.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>3. Câu hỏi trong câu có động từ</h2>
+            <div class="formula">V-ます + か</div>
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">Danhさんはきのうねました。</strong><br />
+              → Danh hôm qua ngủ.<br /><br />
+              <strong class="japanese">Danhさんはきのうねましたか。</strong
+              ><br />
+              → Danh hôm qua ngủ phải không?
+            </div>
+
+            <h3>Cách trả lời:</h3>
+            <ul>
+              <li>
+                <strong>Yes:</strong>
+                <span class="japanese">はい、V-ます (Khẳng định)</span>
+              </li>
+              <li>
+                <strong>No:</strong>
+                <span class="japanese">いいえ、V-ます (Phủ định)</span>
+              </li>
+            </ul>
+            <div class="example">
+              <strong class="japanese">はい、ねました。</strong><br />
+              → Có, đã ngủ.<br /><br />
+              <strong class="japanese">いいえ、ねませんでした。</strong><br />
+              → Không, không ngủ.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>4. Hỏi thời gian</h2>
+            <h3>Hỏi giờ:</h3>
+            <div class="formula">いま + なんじ + ですか = Bây giờ mấy giờ?</div>
+            <div class="formula">いま + ____じ + です = Bây giờ là ____giờ</div>
+
+            <div class="note">
+              <strong>Lưu ý:</strong><br />
+              - <span class="japanese">じ</span> đứng sau số đếm, chỉ giờ<br />
+              - <span class="japanese">ふん / ぷん</span> đứng sau số đếm, chỉ
+              phút<br />
+              - <span class="japanese">ごぜん</span> = AM<br />
+              - <span class="japanese">ごご</span> = PM
+            </div>
+
+            <h3>Bảng đếm giờ:</h3>
+            <table>
+              <tr>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+              </tr>
+              <tr>
+                <td>0 giờ</td>
+                <td class="japanese">れいじ</td>
+                <td>reiji</td>
+                <td>7 giờ</td>
+                <td class="japanese">しちじ</td>
+                <td>shichiji</td>
+              </tr>
+              <tr>
+                <td>1 giờ</td>
+                <td class="japanese">いちじ</td>
+                <td>ichiji</td>
+                <td>8 giờ</td>
+                <td class="japanese">はちじ</td>
+                <td>hachiji</td>
+              </tr>
+              <tr>
+                <td>2 giờ</td>
+                <td class="japanese">にじ</td>
+                <td>niji</td>
+                <td>9 giờ</td>
+                <td class="japanese">くじ</td>
+                <td>kuji</td>
+              </tr>
+              <tr>
+                <td>3 giờ</td>
+                <td class="japanese">さんじ</td>
+                <td>sanji</td>
+                <td>10 giờ</td>
+                <td class="japanese">じゅうじ</td>
+                <td>jūji</td>
+              </tr>
+              <tr>
+                <td>4 giờ</td>
+                <td class="japanese">よじ</td>
+                <td>yoji</td>
+                <td>11 giờ</td>
+                <td class="japanese">じゅういちじ</td>
+                <td>jūichiji</td>
+              </tr>
+              <tr>
+                <td>5 giờ</td>
+                <td class="japanese">ごじ</td>
+                <td>goji</td>
+                <td>12 giờ</td>
+                <td class="japanese">じゅうにじ</td>
+                <td>jūniji</td>
+              </tr>
+              <tr>
+                <td>6 giờ</td>
+                <td class="japanese">ろくじ</td>
+                <td>rokuji</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">２じ</strong> = 2 giờ<br />
+              <strong class="japanese">２じはん</strong> = 2 giờ rưỡi
+            </div>
+
+            <h3>Hỏi phút (なんぷん):</h3>
+            <h4>Đếm từ 1-9 phút:</h4>
+            <table>
+              <tr>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Số</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+              </tr>
+              <tr>
+                <td>1 phút</td>
+                <td class="japanese">いっぷん</td>
+                <td>ippun</td>
+                <td>6 phút</td>
+                <td class="japanese">ろっぷん</td>
+                <td>roppun</td>
+              </tr>
+              <tr>
+                <td>2 phút</td>
+                <td class="japanese">にふん</td>
+                <td>nifun</td>
+                <td>7 phút</td>
+                <td class="japanese">ななふん</td>
+                <td>nanfun</td>
+              </tr>
+              <tr>
+                <td>3 phút</td>
+                <td class="japanese">さんぷん</td>
+                <td>sanpun</td>
+                <td>8 phút</td>
+                <td class="japanese">はっぷん</td>
+                <td>happun</td>
+              </tr>
+              <tr>
+                <td>4 phút</td>
+                <td class="japanese">よんぷん</td>
+                <td>yonpun</td>
+                <td>9 phút</td>
+                <td class="japanese">きゅうぷん</td>
+                <td>kyūpun</td>
+              </tr>
+              <tr>
+                <td>5 phút</td>
+                <td class="japanese">ごふん</td>
+                <td>gofun</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+
+            <h4>Đếm hàng chục:</h4>
+            <table>
+              <tr>
+                <th>Số</th>
+                <th>Hiragana 1</th>
+                <th>Romaji 1</th>
+                <th>Hiragana 2</th>
+                <th>Romaji 2</th>
+              </tr>
+              <tr>
+                <td>10 phút</td>
+                <td class="japanese">じゅっぷん</td>
+                <td>juppun</td>
+                <td class="japanese">じっぷん</td>
+                <td>jippun</td>
+              </tr>
+              <tr>
+                <td>20 phút</td>
+                <td class="japanese">にじゅっぷん</td>
+                <td>nijuppun</td>
+                <td class="japanese">にじっぷん</td>
+                <td>nijippun</td>
+              </tr>
+              <tr>
+                <td>30 phút</td>
+                <td class="japanese">さんじゅっぷん</td>
+                <td>sanjuppun</td>
+                <td class="japanese">さんじっぷん</td>
+                <td>sanjippun</td>
+              </tr>
+              <tr>
+                <td>40 phút</td>
+                <td class="japanese">よんじゅっぷん</td>
+                <td>yonjuppun</td>
+                <td class="japanese">よんじっぷん</td>
+                <td>yonjippun</td>
+              </tr>
+              <tr>
+                <td>50 phút</td>
+                <td class="japanese">ごじゅっぷん</td>
+                <td>gojuppun</td>
+                <td class="japanese">ごじっぷん</td>
+                <td>gojippun</td>
+              </tr>
+            </table>
+
+            <div class="note">
+              <strong>Các số khác:</strong> Lấy hàng chục + hàng đơn vị<br />
+              VD: 18 phút = <span class="japanese">じゅっはっぷん</span><br />
+              35 phút = <span class="japanese">さんじゅっごふん</span>
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">いまなんじですか。</span><br />
+              → Bây giờ là mấy giờ?<br /><br />
+              <strong>A:</strong>
+              <span class="japanese">８じ３５ふんです。</span><br />
+              → 8 giờ 35 phút.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>5. Nói về ngày trong tuần</h2>
+            <div class="formula">N (ngày) + は + ____ようび + です</div>
+
+            <h3>Bảng ngày trong tuần:</h3>
+            <table>
+              <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Nghĩa</th>
+              </tr>
+              <tr>
+                <td class="japanese">げつようび</td>
+                <td>getsuyoubi</td>
+                <td>Thứ 2</td>
+              </tr>
+              <tr>
+                <td class="japanese">かようび</td>
+                <td>kayoubi</td>
+                <td>Thứ 3</td>
+              </tr>
+              <tr>
+                <td class="japanese">すいようび</td>
+                <td>suiyoubi</td>
+                <td>Thứ 4</td>
+              </tr>
+              <tr>
+                <td class="japanese">もくようび</td>
+                <td>mokuyoubi</td>
+                <td>Thứ 5</td>
+              </tr>
+              <tr>
+                <td class="japanese">きんようび</td>
+                <td>kinyoubi</td>
+                <td>Thứ 6</td>
+              </tr>
+              <tr>
+                <td class="japanese">どようび</td>
+                <td>doyoubi</td>
+                <td>Thứ 7</td>
+              </tr>
+              <tr>
+                <td class="japanese">にちようび</td>
+                <td>nichiyoubi</td>
+                <td>Chủ nhật</td>
+              </tr>
+            </table>
+
+            <h3>Hỏi ngày thứ:</h3>
+            <div class="formula">N + は + なんようび + ですか</div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">きょうはげつようびです。</strong><br />
+              → Hôm nay là thứ 2.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>6. Hành động vào thời điểm cụ thể</h2>
+            <div class="formula">(Thời gian) + に + V-ます</div>
+            <div class="note">
+              <strong>Cách dùng:</strong> Nói một hành động xảy ra vào một thời
+              điểm.<br />
+              <strong>Lưu ý:</strong> Thời gian không phải số thì không thêm
+              <span class="japanese">に</span>
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">わたしはまいあさ６じにおきます。</strong
+              ><br />
+              → Tôi thức dậy lúc 6h mỗi sáng.
+            </div>
+            <div class="example">
+              <strong class="japanese">あしたべんきょうします。</strong><br />
+              → Ngày mai đi học. (không dùng に)
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>7. Khoảng thời gian</h2>
+            <div class="formula">____から + ____まで</div>
+            <div class="note">
+              <strong>Cách dùng:</strong> Nói khoảng thời gian, khoảng cách từ
+              lúc nào đến lúc nào, từ đâu đến đâu.<br />
+              - <span class="japanese">から</span> = từ (điểm bắt đầu)<br />
+              - <span class="japanese">まで</span> = đến (điểm kết thúc)
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese"
+                >７じから９じ１５ふんまでべんきょうします。</strong
+              ><br />
+              → Học từ 7h đến 9h15.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>8. Di chuyển đến địa điểm</h2>
+            <div class="formula">N(địa điểm) + へ + V-ます</div>
+            <div class="note">
+              <strong>Cách dùng:</strong> Nói hành động di chuyển, đi đâu, về
+              đâu, đến nơi nào.<br />
+              <strong>Động từ di chuyển:</strong><br />
+              - <span class="japanese">いきます</span> = đi<br />
+              - <span class="japanese">きます</span> = đến<br />
+              - <span class="japanese">かえります</span> = về
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">わたしはFPTだいがくへいきます。</strong
+              ><br />
+              → Tôi đi đến đại học FPT.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>9. Hỏi đi đâu</h2>
+            <div class="formula">どこへ + V-ます + か</div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">きのうはどこへいきましたか。</span><br />
+              → Hôm qua đi đâu vậy?<br /><br />
+              <strong>A:</strong>
+              <span class="japanese">きのうはFPTだいがくへいきました。</span
+              ><br />
+              → Hôm qua đến đại học FPT.
+            </div>
+
+            <h3>Phủ định hoàn toàn:</h3>
+            <div class="formula">どこも + V-ません = không đi đâu cả</div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>10. Hành động tác động lên đối tượng</h2>
+            <div class="formula">N + を + V-ます</div>
+            <div class="note">
+              <strong>Cách dùng:</strong><br />
+              - N là danh từ, đối tượng hành động<br />
+              - <span class="japanese">を</span> là trợ từ chỉ đối tượng tác
+              động<br />
+              - V là tha động từ (động từ có ý chí)
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">ごはんをたべます。</strong><br />
+              → Ăn cơm.
+            </div>
+            <div class="example">
+              <strong class="japanese">にほんごをべんきょうします。</strong
+              ><br />
+              → Học tiếng Nhật.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>11. Hỏi làm gì</h2>
+            <div class="formula">なにを + V-ます + か</div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong>Q:</strong> <span class="japanese">なにをしますか。</span
+              ><br />
+              → Làm gì vậy?<br /><br />
+              <strong>A:</strong>
+              <span class="japanese">にほんごをべんきょうします。</span><br />
+              → Học tiếng Nhật.
+            </div>
+
+            <h3>Phủ định hoàn toàn:</h3>
+            <div class="formula">なにも + V-ません = không làm gì cả</div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>12. Hành động tại địa điểm</h2>
+            <div class="formula">N1(địa điểm) + で + N2 + を + V-ます</div>
+            <div class="note">
+              <strong>Cách dùng:</strong> Một hành động xảy ra tại địa điểm nào
+              đó.<br />
+              - N1 là danh từ chỉ địa điểm diễn ra hành động<br />
+              - <span class="japanese">で</span> là trợ từ chỉ địa điểm diễn ra
+              hành động<br />
+              - N2 là danh từ chỉ đối tượng tác động
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese"
+                >（わたし）うちでごはんをたべます。</strong
+              ><br />
+              → (Tôi) ăn cơm ở nhà.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>13. Hỏi làm gì ở đâu</h2>
+            <div class="formula">どこで + V-ます + か</div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>14. Liệt kê với や</h2>
+            <div class="formula">N1 + や + N2 (+ など) = N1 và N2 (v.v.)</div>
+            <div class="note">
+              <strong>Cách dùng:</strong><br />
+              - <span class="japanese">や</span> dùng để nối các danh từ<br />
+              - Khác với <span class="japanese">と</span> (liệt kê toàn bộ),
+              <span class="japanese">や</span> chỉ liệt kê mang tính tượng
+              trưng<br />
+              - <span class="japanese">など</span> đặt sau danh từ cuối để nhấn
+              mạnh còn những thứ khác
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese"
+                >わたしはまいあさパンやたまごをたべます。</strong
+              ><br />
+              → Tôi ăn bánh mì và trứng (v.v.) mỗi sáng.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="contact">
+        <div class="container1">
+          <div class="header-content">
+            <h2 class="title">📞 Liên hệ với chúng tôi</h2>
+            <p class="subtitle">Hãy kết nối để nhận tư vấn và hỗ trợ</p>
+          </div>
+
+          <div class="contact-links-wrapper">
+            <a
+              href="https://www.facebook.com/tuanvaquan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link facebook-link"
+            >
+              <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+              <span class="link-text">Facebook: Tuấn và Quân</span>
+            </a>
+
+            <a
+              href="mailto:lequan12305@gmail.com"
+              class="contact-link email-link"
+            >
+              <svg
+                class="icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <span class="link-text">lequan12305@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function showSection(index) {
+        const sections = document.querySelectorAll(".section");
+        const buttons = document.querySelectorAll(".nav-btn");
+
+        sections.forEach((section, i) => {
+          section.classList.remove("active");
+          buttons[i].classList.remove("active");
+        });
+
+        sections[index].classList.add("active");
+        buttons[index].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
