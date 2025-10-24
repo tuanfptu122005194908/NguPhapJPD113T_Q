@@ -657,26 +657,41 @@
         background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
         border-color: #f87171;
       }
+
+      .table-responsive {
+        overflow-x: auto;
+      }
+
+      .note.error {
+        background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+        border-left: 5px solid #f44336;
+        box-shadow: 0 5px 20px rgba(244, 67, 54, 0.2);
+      }
+      .note.error strong {
+        color: #c62828;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="header">
-        <h1>Ngữ Pháp JPD113</h1>
+        <h1>Ngữ Pháp JPD113 & JPD123</h1>
         <p>Combo Ngữ Pháp Hủy Diệt - Tiếng Nhật Cơ Bản</p>
       </div>
 
       <div class="nav">
-        <button class="nav-btn" onclick="showSection(0)">
-          Combo 1: Cơ Bản
+        <button class="nav-btn active" onclick="showSection(0)">
+          <span>Combo 1: JPD113 (Cơ Bản)</span>
         </button>
         <button class="nav-btn" onclick="showSection(1)">
-          Combo 2: Động Từ
+          <span>Combo 2: JPD113 (Động Từ)</span>
+        </button>
+        <button class="nav-btn" onclick="showSection(2)">
+          <span>Combo 3: JPD123 (Tính từ & Liên kết)</span>
         </button>
       </div>
 
       <div class="content">
-        <!-- COMBO 1 -->
         <div class="section active">
           <div class="grammar-box">
             <h2>1. Cấu trúc khẳng định</h2>
@@ -810,32 +825,34 @@
 
           <div class="grammar-box">
             <h2>8. Định vị từ (Demonstratives)</h2>
-            <table>
-              <tr>
-                <th></th>
-                <th>Này (gần người nói)</th>
-                <th>Đó (gần người nghe)</th>
-                <th>Kia (xa cả hai)</th>
-              </tr>
-              <tr>
-                <td><strong>Chỉ vật</strong></td>
-                <td class="japanese">これ</td>
-                <td class="japanese">それ</td>
-                <td class="japanese">あれ</td>
-              </tr>
-              <tr>
-                <td><strong>Chỉ vật, người</strong></td>
-                <td class="japanese">この</td>
-                <td class="japanese">その</td>
-                <td class="japanese">あの</td>
-              </tr>
-              <tr>
-                <td><strong>Chỉ nơi chốn</strong></td>
-                <td class="japanese">ここ / こちら</td>
-                <td class="japanese">そこ / そちら</td>
-                <td class="japanese">あそこ / あちら</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th></th>
+                  <th>Này (gần người nói)</th>
+                  <th>Đó (gần người nghe)</th>
+                  <th>Kia (xa cả hai)</th>
+                </tr>
+                <tr>
+                  <td><strong>Chỉ vật</strong></td>
+                  <td class="japanese">これ</td>
+                  <td class="japanese">それ</td>
+                  <td class="japanese">あれ</td>
+                </tr>
+                <tr>
+                  <td><strong>Chỉ vật, người</strong></td>
+                  <td class="japanese">この</td>
+                  <td class="japanese">その</td>
+                  <td class="japanese">あの</td>
+                </tr>
+                <tr>
+                  <td><strong>Chỉ nơi chốn</strong></td>
+                  <td class="japanese">ここ / こちら</td>
+                  <td class="japanese">そこ / そちら</td>
+                  <td class="japanese">あそこ / あちら</td>
+                </tr>
+              </table>
+            </div>
 
             <h3>Nhận biết:</h3>
             <ul>
@@ -887,56 +904,58 @@
 
           <div class="grammar-box">
             <h2>10. Đếm số lượng (cái)</h2>
-            <table>
-              <tr>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-              </tr>
-              <tr>
-                <td>1 cái</td>
-                <td class="japanese">ひとつ</td>
-                <td>hitotsu</td>
-                <td>6 cái</td>
-                <td class="japanese">むっつ</td>
-                <td>muttsu</td>
-              </tr>
-              <tr>
-                <td>2 cái</td>
-                <td class="japanese">ふたつ</td>
-                <td>futatsu</td>
-                <td>7 cái</td>
-                <td class="japanese">ななつ</td>
-                <td>nanatsu</td>
-              </tr>
-              <tr>
-                <td>3 cái</td>
-                <td class="japanese">みっつ</td>
-                <td>mittsu</td>
-                <td>8 cái</td>
-                <td class="japanese">やっつ</td>
-                <td>yattsu</td>
-              </tr>
-              <tr>
-                <td>4 cái</td>
-                <td class="japanese">よっつ</td>
-                <td>yottsu</td>
-                <td>9 cái</td>
-                <td class="japanese">ここのつ</td>
-                <td>kokonotsu</td>
-              </tr>
-              <tr>
-                <td>5 cái</td>
-                <td class="japanese">いつつ</td>
-                <td>itsutsu</td>
-                <td>10 cái</td>
-                <td class="japanese">とお</td>
-                <td>too</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                </tr>
+                <tr>
+                  <td>1 cái</td>
+                  <td class="japanese">ひとつ</td>
+                  <td>hitotsu</td>
+                  <td>6 cái</td>
+                  <td class="japanese">むっつ</td>
+                  <td>muttsu</td>
+                </tr>
+                <tr>
+                  <td>2 cái</td>
+                  <td class="japanese">ふたつ</td>
+                  <td>futatsu</td>
+                  <td>7 cái</td>
+                  <td class="japanese">ななつ</td>
+                  <td>nanatsu</td>
+                </tr>
+                <tr>
+                  <td>3 cái</td>
+                  <td class="japanese">みっつ</td>
+                  <td>mittsu</td>
+                  <td>8 cái</td>
+                  <td class="japanese">やっつ</td>
+                  <td>yattsu</td>
+                </tr>
+                <tr>
+                  <td>4 cái</td>
+                  <td class="japanese">よっつ</td>
+                  <td>yottsu</td>
+                  <td>9 cái</td>
+                  <td class="japanese">ここのつ</td>
+                  <td>kokonotsu</td>
+                </tr>
+                <tr>
+                  <td>5 cái</td>
+                  <td class="japanese">いつつ</td>
+                  <td>itsutsu</td>
+                  <td>10 cái</td>
+                  <td class="japanese">とお</td>
+                  <td>too</td>
+                </tr>
+              </table>
+            </div>
             <div class="note">
               <strong>Lưu ý:</strong> Từ 11 cái trở lên, sử dụng số đếm và không
               thêm <span class="japanese">つ</span> vào sau.
@@ -956,166 +975,172 @@
             </div>
 
             <h3>Đếm 100 → 999:</h3>
-            <table>
-              <tr>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-              </tr>
-              <tr>
-                <td>100</td>
-                <td class="japanese">ひゃく</td>
-                <td>hyaku</td>
-              </tr>
-              <tr>
-                <td>200</td>
-                <td class="japanese">にひゃく</td>
-                <td>nihyaku</td>
-              </tr>
-              <tr>
-                <td>300</td>
-                <td class="japanese">さんびゃく</td>
-                <td>sanbyaku</td>
-              </tr>
-              <tr>
-                <td>400</td>
-                <td class="japanese">よんひゃく</td>
-                <td>yonhyaku</td>
-              </tr>
-              <tr>
-                <td>500</td>
-                <td class="japanese">ごひゃく</td>
-                <td>gohyaku</td>
-              </tr>
-              <tr>
-                <td>600</td>
-                <td class="japanese">ろっぴゃく</td>
-                <td>roppyaku</td>
-              </tr>
-              <tr>
-                <td>700</td>
-                <td class="japanese">ななひゃく</td>
-                <td>nanahyaku</td>
-              </tr>
-              <tr>
-                <td>800</td>
-                <td class="japanese">はっぴゃく</td>
-                <td>happyaku</td>
-              </tr>
-              <tr>
-                <td>900</td>
-                <td class="japanese">きゅうひゃく</td>
-                <td>kyuhyaku</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                </tr>
+                <tr>
+                  <td>100</td>
+                  <td class="japanese">ひゃく</td>
+                  <td>hyaku</td>
+                </tr>
+                <tr>
+                  <td>200</td>
+                  <td class="japanese">にひゃく</td>
+                  <td>nihyaku</td>
+                </tr>
+                <tr>
+                  <td>300</td>
+                  <td class="japanese">さんびゃく</td>
+                  <td>sanbyaku</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td class="japanese">よんひゃく</td>
+                  <td>yonhyaku</td>
+                </tr>
+                <tr>
+                  <td>500</td>
+                  <td class="japanese">ごひゃく</td>
+                  <td>gohyaku</td>
+                </tr>
+                <tr>
+                  <td>600</td>
+                  <td class="japanese">ろっぴゃく</td>
+                  <td>roppyaku</td>
+                </tr>
+                <tr>
+                  <td>700</td>
+                  <td class="japanese">ななひゃく</td>
+                  <td>nanahyaku</td>
+                </tr>
+                <tr>
+                  <td>800</td>
+                  <td class="japanese">はっぴゃく</td>
+                  <td>happyaku</td>
+                </tr>
+                <tr>
+                  <td>900</td>
+                  <td class="japanese">きゅうひゃく</td>
+                  <td>kyuhyaku</td>
+                </tr>
+              </table>
+            </div>
 
             <h3>Đếm 1000 → 9999:</h3>
-            <table>
-              <tr>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-              </tr>
-              <tr>
-                <td>1000</td>
-                <td class="japanese">せん</td>
-                <td>sen</td>
-              </tr>
-              <tr>
-                <td>2000</td>
-                <td class="japanese">にせん</td>
-                <td>nisen</td>
-              </tr>
-              <tr>
-                <td>3000</td>
-                <td class="japanese">さんぜん</td>
-                <td>sanzen</td>
-              </tr>
-              <tr>
-                <td>4000</td>
-                <td class="japanese">よんせん</td>
-                <td>yonsen</td>
-              </tr>
-              <tr>
-                <td>5000</td>
-                <td class="japanese">ごせん</td>
-                <td>gosen</td>
-              </tr>
-              <tr>
-                <td>6000</td>
-                <td class="japanese">ろくせん</td>
-                <td>rokusen</td>
-              </tr>
-              <tr>
-                <td>7000</td>
-                <td class="japanese">ななせん</td>
-                <td>nanasen</td>
-              </tr>
-              <tr>
-                <td>8000</td>
-                <td class="japanese">はっせん</td>
-                <td>hassen</td>
-              </tr>
-              <tr>
-                <td>9000</td>
-                <td class="japanese">きゅうせん</td>
-                <td>kyuusen</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                </tr>
+                <tr>
+                  <td>1000</td>
+                  <td class="japanese">せん</td>
+                  <td>sen</td>
+                </tr>
+                <tr>
+                  <td>2000</td>
+                  <td class="japanese">にせん</td>
+                  <td>nisen</td>
+                </tr>
+                <tr>
+                  <td>3000</td>
+                  <td class="japanese">さんぜん</td>
+                  <td>sanzen</td>
+                </tr>
+                <tr>
+                  <td>4000</td>
+                  <td class="japanese">よんせん</td>
+                  <td>yonsen</td>
+                </tr>
+                <tr>
+                  <td>5000</td>
+                  <td class="japanese">ごせん</td>
+                  <td>gosen</td>
+                </tr>
+                <tr>
+                  <td>6000</td>
+                  <td class="japanese">ろくせん</td>
+                  <td>rokusen</td>
+                </tr>
+                <tr>
+                  <td>7000</td>
+                  <td class="japanese">ななせん</td>
+                  <td>nanasen</td>
+                </tr>
+                <tr>
+                  <td>8000</td>
+                  <td class="japanese">はっせん</td>
+                  <td>hassen</td>
+                </tr>
+                <tr>
+                  <td>9000</td>
+                  <td class="japanese">きゅうせん</td>
+                  <td>kyuusen</td>
+                </tr>
+              </table>
+            </div>
 
             <h3>Đếm 10000 → 99999:</h3>
-            <table>
-              <tr>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-              </tr>
-              <tr>
-                <td>10000</td>
-                <td class="japanese">いちまん</td>
-                <td>ichiman</td>
-              </tr>
-              <tr>
-                <td>20000</td>
-                <td class="japanese">にまん</td>
-                <td>niman</td>
-              </tr>
-              <tr>
-                <td>30000</td>
-                <td class="japanese">さんまん</td>
-                <td>sanman</td>
-              </tr>
-              <tr>
-                <td>40000</td>
-                <td class="japanese">よんまん</td>
-                <td>yonman</td>
-              </tr>
-              <tr>
-                <td>50000</td>
-                <td class="japanese">ごまん</td>
-                <td>goman</td>
-              </tr>
-              <tr>
-                <td>60000</td>
-                <td class="japanese">ろくまん</td>
-                <td>rokuman</td>
-              </tr>
-              <tr>
-                <td>70000</td>
-                <td class="japanese">ななまん</td>
-                <td>nanaman</td>
-              </tr>
-              <tr>
-                <td>80000</td>
-                <td class="japanese">はちまん</td>
-                <td>hachiman</td>
-              </tr>
-              <tr>
-                <td>90000</td>
-                <td class="japanese">きゅうまん</td>
-                <td>kyuuman</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                </tr>
+                <tr>
+                  <td>10000</td>
+                  <td class="japanese">いちまん</td>
+                  <td>ichiman</td>
+                </tr>
+                <tr>
+                  <td>20000</td>
+                  <td class="japanese">にまん</td>
+                  <td>niman</td>
+                </tr>
+                <tr>
+                  <td>30000</td>
+                  <td class="japanese">さんまん</td>
+                  <td>sanman</td>
+                </tr>
+                <tr>
+                  <td>40000</td>
+                  <td class="japanese">よんまん</td>
+                  <td>yonman</td>
+                </tr>
+                <tr>
+                  <td>50000</td>
+                  <td class="japanese">ごまん</td>
+                  <td>goman</td>
+                </tr>
+                <tr>
+                  <td>60000</td>
+                  <td class="japanese">ろくまん</td>
+                  <td>rokuman</td>
+                </tr>
+                <tr>
+                  <td>70000</td>
+                  <td class="japanese">ななまん</td>
+                  <td>nanaman</td>
+                </tr>
+                <tr>
+                  <td>80000</td>
+                  <td class="japanese">はちまん</td>
+                  <td>hachiman</td>
+                </tr>
+                <tr>
+                  <td>90000</td>
+                  <td class="japanese">きゅうまん</td>
+                  <td>kyuuman</td>
+                </tr>
+              </table>
+            </div>
           </div>
 
           <div class="grammar-box">
@@ -1204,7 +1229,6 @@
           </div>
         </div>
 
-        <!-- COMBO 3 -->
         <div class="section">
           <div class="grammar-box">
             <h2>1. V-ます (Động từ dạng lịch sự)</h2>
@@ -1220,65 +1244,69 @@
             </div>
 
             <h3>Từ vựng thời gian:</h3>
-            <table>
-              <tr>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-                <th>Nghĩa</th>
-                <th>Thời gian</th>
-              </tr>
-              <tr>
-                <td class="japanese">おととい</td>
-                <td>ototoi</td>
-                <td>hôm kia</td>
-                <td>quá khứ</td>
-              </tr>
-              <tr>
-                <td class="japanese">きのう</td>
-                <td>kinou</td>
-                <td>hôm qua</td>
-                <td>quá khứ</td>
-              </tr>
-              <tr>
-                <td class="japanese">きょう</td>
-                <td>kyō</td>
-                <td>hôm nay</td>
-                <td>hiện tại</td>
-              </tr>
-              <tr>
-                <td class="japanese">あした</td>
-                <td>ashita</td>
-                <td>ngày mai</td>
-                <td>tương lai</td>
-              </tr>
-              <tr>
-                <td class="japanese">あさって</td>
-                <td>asatte</td>
-                <td>ngày mốt</td>
-                <td>tương lai</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                  <th>Nghĩa</th>
+                  <th>Thời gian</th>
+                </tr>
+                <tr>
+                  <td class="japanese">おととい</td>
+                  <td>ototoi</td>
+                  <td>hôm kia</td>
+                  <td>quá khứ</td>
+                </tr>
+                <tr>
+                  <td class="japanese">きのう</td>
+                  <td>kinou</td>
+                  <td>hôm qua</td>
+                  <td>quá khứ</td>
+                </tr>
+                <tr>
+                  <td class="japanese">きょう</td>
+                  <td>kyō</td>
+                  <td>hôm nay</td>
+                  <td>hiện tại</td>
+                </tr>
+                <tr>
+                  <td class="japanese">あした</td>
+                  <td>ashita</td>
+                  <td>ngày mai</td>
+                  <td>tương lai</td>
+                </tr>
+                <tr>
+                  <td class="japanese">あさって</td>
+                  <td>asatte</td>
+                  <td>ngày mốt</td>
+                  <td>tương lai</td>
+                </tr>
+              </table>
+            </div>
           </div>
 
           <div class="grammar-box">
             <h2>2. Cách chia động từ V-ます</h2>
-            <table>
-              <tr>
-                <th>V-ます</th>
-                <th>Quá khứ</th>
-                <th>Hiện tại + Tương lai</th>
-              </tr>
-              <tr>
-                <td><strong>Khẳng định</strong></td>
-                <td class="japanese">V-ました</td>
-                <td class="japanese">V-ます</td>
-              </tr>
-              <tr>
-                <td><strong>Phủ định</strong></td>
-                <td class="japanese">V-ませんでした</td>
-                <td class="japanese">V-ません</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>V-ます</th>
+                  <th>Quá khứ</th>
+                  <th>Hiện tại + Tương lai</th>
+                </tr>
+                <tr>
+                  <td><strong>Khẳng định</strong></td>
+                  <td class="japanese">V-ました</td>
+                  <td class="japanese">V-ます</td>
+                </tr>
+                <tr>
+                  <td><strong>Phủ định</strong></td>
+                  <td class="japanese">V-ませんでした</td>
+                  <td class="japanese">V-ません</td>
+                </tr>
+              </table>
+            </div>
             <h3>Ví dụ:</h3>
             <div class="example">
               <strong class="japanese">きのうねませんでした。</strong><br />
@@ -1333,72 +1361,74 @@
             </div>
 
             <h3>Bảng đếm giờ:</h3>
-            <table>
-              <tr>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-              </tr>
-              <tr>
-                <td>0 giờ</td>
-                <td class="japanese">れいじ</td>
-                <td>reiji</td>
-                <td>7 giờ</td>
-                <td class="japanese">しちじ</td>
-                <td>shichiji</td>
-              </tr>
-              <tr>
-                <td>1 giờ</td>
-                <td class="japanese">いちじ</td>
-                <td>ichiji</td>
-                <td>8 giờ</td>
-                <td class="japanese">はちじ</td>
-                <td>hachiji</td>
-              </tr>
-              <tr>
-                <td>2 giờ</td>
-                <td class="japanese">にじ</td>
-                <td>niji</td>
-                <td>9 giờ</td>
-                <td class="japanese">くじ</td>
-                <td>kuji</td>
-              </tr>
-              <tr>
-                <td>3 giờ</td>
-                <td class="japanese">さんじ</td>
-                <td>sanji</td>
-                <td>10 giờ</td>
-                <td class="japanese">じゅうじ</td>
-                <td>jūji</td>
-              </tr>
-              <tr>
-                <td>4 giờ</td>
-                <td class="japanese">よじ</td>
-                <td>yoji</td>
-                <td>11 giờ</td>
-                <td class="japanese">じゅういちじ</td>
-                <td>jūichiji</td>
-              </tr>
-              <tr>
-                <td>5 giờ</td>
-                <td class="japanese">ごじ</td>
-                <td>goji</td>
-                <td>12 giờ</td>
-                <td class="japanese">じゅうにじ</td>
-                <td>jūniji</td>
-              </tr>
-              <tr>
-                <td>6 giờ</td>
-                <td class="japanese">ろくじ</td>
-                <td>rokuji</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                </tr>
+                <tr>
+                  <td>0 giờ</td>
+                  <td class="japanese">れいじ</td>
+                  <td>reiji</td>
+                  <td>7 giờ</td>
+                  <td class="japanese">しちじ</td>
+                  <td>shichiji</td>
+                </tr>
+                <tr>
+                  <td>1 giờ</td>
+                  <td class="japanese">いちじ</td>
+                  <td>ichiji</td>
+                  <td>8 giờ</td>
+                  <td class="japanese">はちじ</td>
+                  <td>hachiji</td>
+                </tr>
+                <tr>
+                  <td>2 giờ</td>
+                  <td class="japanese">にじ</td>
+                  <td>niji</td>
+                  <td>9 giờ</td>
+                  <td class="japanese">くじ</td>
+                  <td>kuji</td>
+                </tr>
+                <tr>
+                  <td>3 giờ</td>
+                  <td class="japanese">さんじ</td>
+                  <td>sanji</td>
+                  <td>10 giờ</td>
+                  <td class="japanese">じゅうじ</td>
+                  <td>jūji</td>
+                </tr>
+                <tr>
+                  <td>4 giờ</td>
+                  <td class="japanese">よじ</td>
+                  <td>yoji</td>
+                  <td>11 giờ</td>
+                  <td class="japanese">じゅういちじ</td>
+                  <td>jūichiji</td>
+                </tr>
+                <tr>
+                  <td>5 giờ</td>
+                  <td class="japanese">ごじ</td>
+                  <td>goji</td>
+                  <td>12 giờ</td>
+                  <td class="japanese">じゅうにじ</td>
+                  <td>jūniji</td>
+                </tr>
+                <tr>
+                  <td>6 giờ</td>
+                  <td class="japanese">ろくじ</td>
+                  <td>rokuji</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
 
             <h3>Ví dụ:</h3>
             <div class="example">
@@ -1408,102 +1438,106 @@
 
             <h3>Hỏi phút (なんぷん):</h3>
             <h4>Đếm từ 1-9 phút:</h4>
-            <table>
-              <tr>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-                <th>Số</th>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-              </tr>
-              <tr>
-                <td>1 phút</td>
-                <td class="japanese">いっぷん</td>
-                <td>ippun</td>
-                <td>6 phút</td>
-                <td class="japanese">ろっぷん</td>
-                <td>roppun</td>
-              </tr>
-              <tr>
-                <td>2 phút</td>
-                <td class="japanese">にふん</td>
-                <td>nifun</td>
-                <td>7 phút</td>
-                <td class="japanese">ななふん</td>
-                <td>nanfun</td>
-              </tr>
-              <tr>
-                <td>3 phút</td>
-                <td class="japanese">さんぷん</td>
-                <td>sanpun</td>
-                <td>8 phút</td>
-                <td class="japanese">はっぷん</td>
-                <td>happun</td>
-              </tr>
-              <tr>
-                <td>4 phút</td>
-                <td class="japanese">よんぷん</td>
-                <td>yonpun</td>
-                <td>9 phút</td>
-                <td class="japanese">きゅうぷん</td>
-                <td>kyūpun</td>
-              </tr>
-              <tr>
-                <td>5 phút</td>
-                <td class="japanese">ごふん</td>
-                <td>gofun</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                  <th>Số</th>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                </tr>
+                <tr>
+                  <td>1 phút</td>
+                  <td class="japanese">いっぷん</td>
+                  <td>ippun</td>
+                  <td>6 phút</td>
+                  <td class="japanese">ろっぷん</td>
+                  <td>roppun</td>
+                </tr>
+                <tr>
+                  <td>2 phút</td>
+                  <td class="japanese">にふん</td>
+                  <td>nifun</td>
+                  <td>7 phút</td>
+                  <td class="japanese">ななふん</td>
+                  <td>nanfun</td>
+                </tr>
+                <tr>
+                  <td>3 phút</td>
+                  <td class="japanese">さんぷん</td>
+                  <td>sanpun</td>
+                  <td>8 phút</td>
+                  <td class="japanese">はっぷん</td>
+                  <td>happun</td>
+                </tr>
+                <tr>
+                  <td>4 phút</td>
+                  <td class="japanese">よんぷん</td>
+                  <td>yonpun</td>
+                  <td>9 phút</td>
+                  <td class="japanese">きゅうぷん</td>
+                  <td>kyūpun</td>
+                </tr>
+                <tr>
+                  <td>5 phút</td>
+                  <td class="japanese">ごふん</td>
+                  <td>gofun</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
 
             <h4>Đếm hàng chục:</h4>
-            <table>
-              <tr>
-                <th>Số</th>
-                <th>Hiragana 1</th>
-                <th>Romaji 1</th>
-                <th>Hiragana 2</th>
-                <th>Romaji 2</th>
-              </tr>
-              <tr>
-                <td>10 phút</td>
-                <td class="japanese">じゅっぷん</td>
-                <td>juppun</td>
-                <td class="japanese">じっぷん</td>
-                <td>jippun</td>
-              </tr>
-              <tr>
-                <td>20 phút</td>
-                <td class="japanese">にじゅっぷん</td>
-                <td>nijuppun</td>
-                <td class="japanese">にじっぷん</td>
-                <td>nijippun</td>
-              </tr>
-              <tr>
-                <td>30 phút</td>
-                <td class="japanese">さんじゅっぷん</td>
-                <td>sanjuppun</td>
-                <td class="japanese">さんじっぷん</td>
-                <td>sanjippun</td>
-              </tr>
-              <tr>
-                <td>40 phút</td>
-                <td class="japanese">よんじゅっぷん</td>
-                <td>yonjuppun</td>
-                <td class="japanese">よんじっぷん</td>
-                <td>yonjippun</td>
-              </tr>
-              <tr>
-                <td>50 phút</td>
-                <td class="japanese">ごじゅっぷん</td>
-                <td>gojuppun</td>
-                <td class="japanese">ごじっぷん</td>
-                <td>gojippun</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Số</th>
+                  <th>Hiragana 1</th>
+                  <th>Romaji 1</th>
+                  <th>Hiragana 2</th>
+                  <th>Romaji 2</th>
+                </tr>
+                <tr>
+                  <td>10 phút</td>
+                  <td class="japanese">じゅっぷん</td>
+                  <td>juppun</td>
+                  <td class="japanese">じっぷん</td>
+                  <td>jippun</td>
+                </tr>
+                <tr>
+                  <td>20 phút</td>
+                  <td class="japanese">にじゅっぷん</td>
+                  <td>nijuppun</td>
+                  <td class="japanese">にじっぷん</td>
+                  <td>nijippun</td>
+                </tr>
+                <tr>
+                  <td>30 phút</td>
+                  <td class="japanese">さんじゅっぷん</td>
+                  <td>sanjuppun</td>
+                  <td class="japanese">さんじっぷん</td>
+                  <td>sanjippun</td>
+                </tr>
+                <tr>
+                  <td>40 phút</td>
+                  <td class="japanese">よんじゅっぷん</td>
+                  <td>yonjuppun</td>
+                  <td class="japanese">よんじっぷん</td>
+                  <td>yonjippun</td>
+                </tr>
+                <tr>
+                  <td>50 phút</td>
+                  <td class="japanese">ごじゅっぷん</td>
+                  <td>gojuppun</td>
+                  <td class="japanese">ごじっぷん</td>
+                  <td>gojippun</td>
+                </tr>
+              </table>
+            </div>
 
             <div class="note">
               <strong>Các số khác:</strong> Lấy hàng chục + hàng đơn vị<br />
@@ -1527,48 +1561,50 @@
             <div class="formula">N (ngày) + は + ____ようび + です</div>
 
             <h3>Bảng ngày trong tuần:</h3>
-            <table>
-              <tr>
-                <th>Hiragana</th>
-                <th>Romaji</th>
-                <th>Nghĩa</th>
-              </tr>
-              <tr>
-                <td class="japanese">げつようび</td>
-                <td>getsuyoubi</td>
-                <td>Thứ 2</td>
-              </tr>
-              <tr>
-                <td class="japanese">かようび</td>
-                <td>kayoubi</td>
-                <td>Thứ 3</td>
-              </tr>
-              <tr>
-                <td class="japanese">すいようび</td>
-                <td>suiyoubi</td>
-                <td>Thứ 4</td>
-              </tr>
-              <tr>
-                <td class="japanese">もくようび</td>
-                <td>mokuyoubi</td>
-                <td>Thứ 5</td>
-              </tr>
-              <tr>
-                <td class="japanese">きんようび</td>
-                <td>kinyoubi</td>
-                <td>Thứ 6</td>
-              </tr>
-              <tr>
-                <td class="japanese">どようび</td>
-                <td>doyoubi</td>
-                <td>Thứ 7</td>
-              </tr>
-              <tr>
-                <td class="japanese">にちようび</td>
-                <td>nichiyoubi</td>
-                <td>Chủ nhật</td>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                  <th>Nghĩa</th>
+                </tr>
+                <tr>
+                  <td class="japanese">げつようび</td>
+                  <td>getsuyoubi</td>
+                  <td>Thứ 2</td>
+                </tr>
+                <tr>
+                  <td class="japanese">かようび</td>
+                  <td>kayoubi</td>
+                  <td>Thứ 3</td>
+                </tr>
+                <tr>
+                  <td class="japanese">すいようび</td>
+                  <td>suiyoubi</td>
+                  <td>Thứ 4</td>
+                </tr>
+                <tr>
+                  <td class="japanese">もくようび</td>
+                  <td>mokuyoubi</td>
+                  <td>Thứ 5</td>
+                </tr>
+                <tr>
+                  <td class="japanese">きんようび</td>
+                  <td>kinyoubi</td>
+                  <td>Thứ 6</td>
+                </tr>
+                <tr>
+                  <td class="japanese">どようび</td>
+                  <td>doyoubi</td>
+                  <td>Thứ 7</td>
+                </tr>
+                <tr>
+                  <td class="japanese">にちようび</td>
+                  <td>nichiyoubi</td>
+                  <td>Chủ nhật</td>
+                </tr>
+              </table>
+            </div>
 
             <h3>Hỏi ngày thứ:</h3>
             <div class="formula">N + は + なんようび + ですか</div>
@@ -1749,6 +1785,979 @@
             </div>
           </div>
         </div>
+
+        <div class="section">
+          <div class="grammar-box">
+            <h2>Bài 4: Tính từ</h2>
+            <div class="note">
+              Tính từ dùng để bổ sung ý nghĩa cho danh từ, hoặc đứng cuối câu để
+              kết thúc câu.
+            </div>
+
+            <h3>
+              1. Tính từ đuôi <span class="japanese">い</span> (i-adjective)
+            </h3>
+            <div class="formula">
+              Là những tính từ kết thúc bằng đuôi
+              <span class="japanese">い</span> (trừ
+              <span class="japanese">きれい</span>,
+              <span class="japanese">きらい</span>,
+              <span class="japanese">ゆうめい</span>...)
+            </div>
+
+            <h4>a. Đứng cuối câu (Khẳng định - Hiện tại)</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">い</span> + です
+            </div>
+            <div class="example">
+              <strong class="japanese">このかばんはあたらしいです。</strong
+              ><br />
+              → Cái cặp này mới. (<span class="japanese">あたらしい</span> -
+              mới)
+            </div>
+
+            <h4>b. Bổ nghĩa cho Danh từ</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">い</span> + Danh từ
+            </div>
+            <div class="example">
+              <strong class="japanese">たかいやま</strong><br />
+              → Núi cao. (<span class="japanese">たかい</span> - cao,
+              <span class="japanese">やま</span> - núi)
+            </div>
+
+            <h4>c. Phủ định (Hiện tại)</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">い</span> (bỏ
+              <span class="japanese">い</span>) +
+              <span class="japanese">くない</span> + です
+            </div>
+            <div class="note error">
+              <strong>Ngoại lệ:</strong>
+              <span class="japanese">いい</span> (tốt) →
+              <span class="japanese">よくないです</span>
+            </div>
+            <div class="example">
+              <strong class="japanese">このりょうりはおいしくないです。</strong
+              ><br />
+              → Món này không ngon.
+            </div>
+
+            <h4>d. Quá khứ (Khẳng định)</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">い</span> (bỏ
+              <span class="japanese">い</span>) +
+              <span class="japanese">かった</span> + です
+            </div>
+            <div class="note error">
+              <strong>Ngoại lệ:</strong>
+              <span class="japanese">いい</span> (tốt) →
+              <span class="japanese">よかったです</span> (Đã tốt)
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >きのうのパーティはとてもたのしかったです。</strong
+              ><br />
+              → Buổi tiệc hôm qua đã rất vui. (<span class="japanese"
+                >たのしい</span
+              >
+              - vui vẻ, <span class="japanese">とても</span> - rất)
+            </div>
+
+            <h4>e. Quá khứ (Phủ định)</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">い</span> (bỏ
+              <span class="japanese">い</span>) +
+              <span class="japanese">くなかった</span> + です
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >このりょうりはおいしくなかったです。</strong
+              ><br />
+              → Món này đã không ngon.
+            </div>
+
+            <h3>
+              2. Tính từ đuôi <span class="japanese">な</span> (na-adjective)
+            </h3>
+            <div class="formula">
+              Là những tính từ không có đuôi
+              <span class="japanese">い</span> (VD:
+              <span class="japanese">にぎやか</span> - náo nhiệt,
+              <span class="japanese">しずか</span> - yên tĩnh)
+            </div>
+
+            <h4>a. Đứng cuối câu (Khẳng định - Hiện tại)</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">な</span> (bỏ
+              <span class="japanese">な</span>) + です
+            </div>
+            <div class="example">
+              <strong class="japanese">このビルはきれいです。</strong><br />
+              → Tòa nhà này đẹp. (<span class="japanese">きれい</span> -
+              đẹp/sạch)
+            </div>
+
+            <h4>b. Bổ nghĩa cho Danh từ</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">な</span> +
+              <span class="japanese">な</span> + Danh từ
+            </div>
+            <div class="example">
+              <strong class="japanese">きれいなやま</strong><br />
+              → Núi đẹp.
+            </div>
+            <div class="example">
+              <strong class="japanese">にぎやかなまち</strong><br />
+              → Thành phố náo nhiệt.
+            </div>
+
+            <h4>c. Phủ định (Hiện tại)</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">な</span> (bỏ
+              <span class="japanese">な</span>) +
+              <span class="japanese">じゃありません</span> /
+              <span class="japanese">ではありません</span>
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >わたしのまちはゆうめいじゃありません。</strong
+              ><br />
+              → Thành phố của tôi không nổi tiếng.
+            </div>
+
+            <h4>d. Quá khứ (Khẳng định)</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">な</span> (bỏ
+              <span class="japanese">な</span>) +
+              <span class="japanese">でした</span>
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >きのうのパーティはとてもにぎやかでした。</strong
+              ><br />
+              → Buổi tiệc hôm qua đã rất náo nhiệt.
+            </div>
+
+            <h4>e. Quá khứ (Phủ định)</h4>
+            <div class="formula">
+              Tính từ <span class="japanese">な</span> (bỏ
+              <span class="japanese">な</span>) +
+              <span class="japanese">ではありませんでした</span>
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >きのうのまちはにぎやかではありませんでした。</strong
+              ><br />
+              → Thành phố hôm qua đã không náo nhiệt.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>Bài 4: Phó từ & Phân biệt nghi vấn từ</h2>
+
+            <h3>1. Phó từ mức độ</h3>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Phó từ</th>
+                  <th>Nghĩa</th>
+                  <th>Dùng với</th>
+                  <th>Ví dụ</th>
+                </tr>
+                <tr>
+                  <td class="japanese">とても</td>
+                  <td>rất, lắm</td>
+                  <td>Khẳng định</td>
+                  <td class="japanese">とてもおいしいです。</td>
+                </tr>
+                <tr>
+                  <td class="japanese">たいへん</td>
+                  <td>cực kì, vô cùng</td>
+                  <td>Khẳng định</td>
+                  <td class="japanese">たいへんにぎやかです。</td>
+                </tr>
+                <tr>
+                  <td class="japanese">すこし / ちょっと</td>
+                  <td>một chút, một ít</td>
+                  <td>Khẳng định</td>
+                  <td class="japanese">ちょっとさむいです。</td>
+                </tr>
+                <tr>
+                  <td class="japanese">あまり</td>
+                  <td>không ~ lắm</td>
+                  <td>Phủ định</td>
+                  <td class="japanese">あまりおおきくないです。</td>
+                </tr>
+                <tr>
+                  <td class="japanese">ぜんぜん</td>
+                  <td>hoàn toàn không</td>
+                  <td>Phủ định</td>
+                  <td class="japanese">ぜんぜんおいしくないです。</td>
+                </tr>
+              </table>
+            </div>
+
+            <h3>2. Phân biệt nghi vấn từ</h3>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Nghi vấn từ</th>
+                  <th>Ý nghĩa</th>
+                  <th>Cách dùng</th>
+                  <th>Ví dụ</th>
+                </tr>
+                <tr>
+                  <td class="japanese">どう / どれ</td>
+                  <td>như thế nào / cái nào</td>
+                  <td>Đứng một mình</td>
+                  <td class="japanese">にほんりょうりはどうですか？</td>
+                </tr>
+                <tr>
+                  <td class="japanese">どんな / どの</td>
+                  <td>người/vật như thế nào / quyển sách nào</td>
+                  <td>Bắt buộc đi kèm Danh từ</td>
+                  <td class="japanese">どんな人ですか？ / どの本ですか？</td>
+                </tr>
+              </table>
+            </div>
+
+            <h3>
+              3. Liên từ <span class="japanese">が</span> và
+              <span class="japanese">そして</span>
+            </h3>
+            <ul>
+              <li>
+                <span class="japanese">が</span>: **Nhưng**. Diễn đạt ý **ngược
+                nghĩa**
+                <div class="example">
+                  <strong class="japanese">いいですが、たかいです。</strong
+                  ><br />
+                  → Tốt nhưng đắt.
+                </div>
+              </li>
+              <li>
+                <span class="japanese">そして</span>: **Và**. Diễn đạt ý **bổ
+                sung, xuôi nghĩa**
+                <div class="example">
+                  <strong class="japanese"
+                    >いいです。そして、きれいです。</strong
+                  ><br />
+                  → Tốt và đẹp.
+                </div>
+              </li>
+            </ul>
+
+            <h3>
+              4. Có/Tồn tại cái gì (<span class="japanese">あります</span>)
+            </h3>
+            <div class="formula">
+              Danh từ (vật) + <span class="japanese">が</span> +
+              <span class="japanese">あります</span>
+            </div>
+            <div class="note">
+              <span class="japanese">に</span> (<span class="japanese">ni</span
+              >) xác định vị trí tồn tại của đồ vật.
+            </div>
+            <div class="example">
+              <strong class="japanese">わたしのまちにはやまがあります。</strong
+              ><br />
+              → Thành phố của tôi có núi.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>Bài 5: Sở thích, Mong muốn & Mục đích</h2>
+
+            <h3>1. Cùng với ai: <span class="japanese">と</span></h3>
+            <div class="formula">
+              Danh từ (chỉ người) + <span class="japanese">と</span> + V-ます
+            </div>
+            <div class="note">
+              <span class="japanese">と</span> xác định đối tượng cùng thực hiện
+              hành động.
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >あした、こいびととえいがをみます。</strong
+              ><br />
+              → Ngày mai tôi sẽ xem phim cùng với người yêu.
+            </div>
+
+            <h3>2. Liên từ <span class="japanese">から</span> (Vì)</h3>
+            <div class="formula">
+              Câu (Lý do) + <span class="japanese">から</span> + Câu (Kết quả)
+            </div>
+            <div class="note">
+              <span class="japanese">から</span> đặt ngay sau câu thể hiện lí
+              do, nguyên nhân.
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >おかねがありませんから、なにもかいません。</strong
+              ><br />
+              → Vì không có tiền nên tôi không mua gì.
+            </div>
+
+            <h3>
+              3. Nghi vấn từ <span class="japanese">どうして</span> (Vì sao)
+            </h3>
+            <div class="formula">
+              <span class="japanese">どうして</span> + Câu ~ か
+            </div>
+            <div class="note">
+              Dùng để hỏi lí do, nguyên nhân. Khi trả lời, thường dùng
+              <span class="japanese">から</span>.
+            </div>
+            <div class="example">
+              <strong>Q:</strong>
+              <span class="japanese">どうしてねむいですか。</span><br />
+              → Tại sao buồn ngủ thế?<br />
+              <strong>A:</strong>
+              <span class="japanese">きのうねませんでしたから。</span><br />
+              → Bởi vì hôm qua không ngủ.
+            </div>
+
+            <h3>
+              4. Sở thích/Ghét <span class="japanese">が</span>
+              <span class="japanese">すき</span> /
+              <span class="japanese">きらい</span>
+            </h3>
+            <div class="formula">
+              Danh từ + <span class="japanese">が</span> +
+              <span class="japanese">すきです</span> (thích) /
+              <span class="japanese">きらいです</span> (ghét)
+            </div>
+            <div class="note">
+              <span class="japanese">だいすき</span> (cực kì thích) /
+              <span class="japanese">だいきらい</span> (cực ghét). Tính từ
+              <span class="japanese">きらい</span> là
+              <span class="japanese">な</span>-adj,
+              <span class="japanese">すき</span> là
+              <span class="japanese">な</span>-adj.
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >わたしはにほんのアニメがすきです。</strong
+              ><br />
+              → Tôi thích anime của Nhật Bản.
+            </div>
+
+            <h3>
+              5. Mong muốn sở hữu <span class="japanese">が</span>
+              <span class="japanese">ほしい</span> (Muốn)
+            </h3>
+            <div class="formula">
+              Danh từ + <span class="japanese">が</span> +
+              <span class="japanese">ほしいです</span>
+            </div>
+            <div class="note">
+              Diễn tả ham muốn sở hữu. Dùng như tính từ đuôi
+              <span class="japanese">い</span>.
+            </div>
+            <div class="example">
+              <strong class="japanese">あたらしいくるまがほしいです。</strong
+              ><br />
+              → Tôi muốn có ô tô mới.
+            </div>
+
+            <h3>
+              6. Mong muốn hành động <span class="japanese">V</span>
+              <span class="japanese">たい</span> (Muốn làm)
+            </h3>
+            <div class="formula">
+              Động từ (bỏ <span class="japanese">ます</span>) +
+              <span class="japanese">たいです</span>
+            </div>
+            <div class="note">
+              Diễn tả mong muốn làm gì đó. Dùng như tính từ đuôi
+              <span class="japanese">い</span>.
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >Haさんと
+                <span class="highlight">にほんごをべんきょうしたいです</span
+                >。</strong
+              ><br />
+              → Muốn học tiếng Nhật cùng chị Hà.
+            </div>
+
+            <h3>
+              7. Đi đâu để làm gì <span class="japanese">に</span>
+              <span class="japanese">いきます</span>/<span class="japanese"
+                >きます</span
+              >
+            </h3>
+            <div class="formula">
+              Danh từ (mục đích) / Động từ (bỏ
+              <span class="japanese">ます</span>) +
+              <span class="japanese">に</span> +
+              <span class="japanese">いきます</span>/<span class="japanese"
+                >きます</span
+              >/<span class="japanese">かえります</span>
+            </div>
+            <div class="note">
+              <span class="japanese">に</span> chỉ mục đích của hành động di
+              chuyển. Danh động từ (như <span class="japanese">かいもの</span> -
+              mua sắm) có thể đứng trước <span class="japanese">に</span>.
+            </div>
+            <div class="example">
+              <strong class="japanese">スーパーへかいものに行きます。</strong
+              ><br />
+              → Tôi đi siêu thị để mua sắm.
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >えいがかんへえいがを見に行きます。</strong
+              ><br />
+              → Tôi đi đến rạp chiếu phim để xem phim.
+            </div>
+
+            <h3>
+              8. <span class="japanese">なにか</span> /
+              <span class="japanese">どこか</span> (cái gì đó / đâu đó)
+            </h3>
+            <div class="formula">
+              <span class="japanese">なにか</span> + V-ます +
+              <span class="japanese">か</span>
+              <br />
+              <span class="japanese">どこか</span> +
+              <span class="japanese">へ</span> + V-ます +
+              <span class="japanese">か</span>
+            </div>
+            <div class="example">
+              <strong class="japanese">なにか飲みますか。</strong><br />
+              → Uống cái gì đó không?
+            </div>
+            <div class="example">
+              <strong class="japanese">冬休み、どこかへ行きたいですか。</strong
+              ><br />
+              → Nghỉ đông bạn muốn đi đâu đó không?
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>Bài 6: Đề nghị, So sánh & Phó từ</h2>
+
+            <h3>
+              1. Đề nghị/Rủ rê: <span class="japanese">ませんか</span> /
+              <span class="japanese">ましょう</span> /
+              <span class="japanese">ましょうか</span>
+            </h3>
+            <ul>
+              <li>
+                <span class="japanese">V-ませんか</span>: **Mời ai đó làm gì**
+                (hơi lịch sự)
+                <div class="example">
+                  <strong class="japanese">ケーキを食べませんか。</strong><br />
+                  → Bạn ăn bánh không?
+                </div>
+              </li>
+              <li>
+                <span class="japanese">V-ましょう</span>: **Rủ rê, kêu gọi**
+                (cùng làm gì đó đi)
+                <div class="example">
+                  <strong class="japanese"
+                    >にほんごをべんきょうしましょう。</strong
+                  ><br />
+                  → Cùng học tiếng Nhật nào!
+                </div>
+              </li>
+              <li>
+                <span class="japanese">V-ましょうか</span>: **Đưa ra lời đề nghị
+                giúp đỡ**
+                <div class="example">
+                  <strong class="japanese">かばんをもちましょうか。</strong
+                  ><br />
+                  → Tôi xách (giúp) cái cặp nhé.
+                </div>
+              </li>
+            </ul>
+
+            <h3>
+              2. Phân biệt <span class="japanese">に</span> và
+              <span class="japanese">で</span>
+            </h3>
+            <ul>
+              <li>
+                <span class="japanese">に</span>: Nơi chốn **có/tồn tại** cái gì
+                đó.
+                <div class="formula">
+                  Nơi chốn + <span class="japanese">に</span> + N (vật) +
+                  <span class="japanese">があります</span>
+                </div>
+                <div class="example">
+                  <strong class="japanese"
+                    >わたしのまちにスーパーがあります。</strong
+                  ><br />
+                  → Thành phố của tôi có siêu thị.
+                </div>
+              </li>
+              <li>
+                <span class="japanese">で</span>: Nơi chốn **xảy ra hành động/sự
+                kiện** (hành động có chủ ý).
+                <div class="formula">
+                  Nơi chốn + <span class="japanese">で</span> + Hành động / Sự
+                  kiện + <span class="japanese">があります</span>
+                </div>
+                <div class="example">
+                  <strong class="japanese"
+                    >あした、かいしゃでかいぎがあります。</strong
+                  ><br />
+                  → Ngày mai ở công ty có cuộc họp.
+                </div>
+                <div class="example">
+                  <strong class="japanese"
+                    >レストランでごはんをたべます。</strong
+                  ><br />
+                  → Ăn cơm ở nhà hàng.
+                </div>
+              </li>
+            </ul>
+
+            <h3>3. So sánh hơn</h3>
+            <div class="formula">
+              N1 + <span class="japanese">は</span> + N2 +
+              <span class="japanese">より</span> + Tính từ +
+              <span class="japanese">です</span>
+            </div>
+            <div class="note">Dùng để nói N1 $\sim$ **hơn** N2.</div>
+            <div class="example">
+              <strong class="japanese">ベトナムはにほんよりあついです。</strong
+              ><br />
+              → Việt Nam nóng hơn Nhật Bản.
+            </div>
+            <div class="note">
+              Có thể dùng phó từ để nhấn mạnh:
+              <span class="japanese">ずっと</span> (hơn hẳn rất nhiều),
+              <span class="japanese">ちょっと</span> (hơn một chút).
+            </div>
+
+            <h3>4. So sánh lựa chọn</h3>
+            <div class="formula">
+              N1 + <span class="japanese">と</span> + N2 +
+              <span class="japanese">と</span> +
+              <span class="japanese">どちらが</span> + Tính từ +
+              <span class="japanese">ですか</span>?
+            </div>
+            <div class="note">Hỏi **N1 và N2, cái nào $\sim$ hơn**?</div>
+            <div class="example">
+              <strong class="japanese"
+                >にほんごがえいごとどちらがむずかしいですか。</strong
+              ><br />
+              → Tiếng Nhật và tiếng Anh, cái nào khó hơn?
+            </div>
+            <h4>Cách trả lời:</h4>
+            <ul>
+              <li>
+                Chọn 1: <span class="japanese">N のほうが Tính từ です</span>
+              </li>
+              <li>
+                Chọn cả 2: <span class="japanese">どちらも Tính từ です</span>
+              </li>
+            </ul>
+
+            <h3>5. So sánh nhất</h3>
+            <div class="formula">
+              $\sim$ (trong phạm vi) + <span class="japanese">で</span> / (<span
+                class="japanese"
+                >のなかで</span
+              >) + $\sim$ + <span class="japanese">が</span> +
+              <span class="japanese">いちばん</span> + Tính từ +
+              <span class="japanese">です</span>
+            </div>
+            <div class="note">
+              Diễn tả trong một phạm vi nào đó thì cái gì đó **nhất**.
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >スポーツのなかでサッカーがいちばんすきです。</strong
+              ><br />
+              → Trong các môn thể thao, tôi thích bóng đá nhất.
+            </div>
+
+            <h3>
+              6. <span class="japanese">もう</span> (đã) /
+              <span class="japanese">まだ</span> (vẫn chưa)
+            </h3>
+            <ul>
+              <li>
+                <span class="japanese">もう</span> +
+                <span class="japanese">V</span>-<span class="japanese"
+                  >ました</span
+                >: **Đã** hoàn thành (khẳng định)
+                <div class="example">
+                  <strong class="japanese">もうごはんをたべました。</strong
+                  ><br />
+                  → Tôi đã ăn cơm rồi.
+                </div>
+              </li>
+              <li>
+                <span class="japanese">いいえ</span>、<span class="japanese"
+                  >まだです</span
+                >
+                / <span class="japanese">まだVていません</span>: **Vẫn chưa**
+                (phủ định)
+                <div class="example">
+                  <strong class="japanese">いいえ、まだです。</strong><br />
+                  → Không, vẫn chưa.
+                </div>
+              </li>
+            </ul>
+
+            <h3>7. <span class="japanese">どうですか</span> (Thì sao)</h3>
+            <div class="note">
+              Dùng để đề xuất, đưa ý kiến hoặc hỏi cảm nghĩ, ấn tượng.
+            </div>
+            <div class="example">
+              <strong class="japanese">にほんりょうりはどうですか。</strong
+              ><br />
+              → Món ăn Nhật thì sao? (đề xuất/hỏi cảm nhận)
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>Bài 7: Tồn tại & Vị trí</h2>
+
+            <h3>1. Tồn tại (người/động vật)</h3>
+            <div class="formula">
+              Danh từ (người/động vật) + <span class="japanese">が</span> +
+              <span class="japanese">います</span>
+            </div>
+            <div class="note">
+              Dùng cho người và động vật.
+              <span class="japanese">います</span> là tự động từ (không có chủ
+              ý).
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >あにはにほんごのともだちがいます。</strong
+              ><br />
+              → Anh tôi có bạn người Nhật.
+            </div>
+            <div class="example">
+              <strong class="japanese">わたしはこいびとがいません。</strong
+              ><br />
+              → Tôi không có người yêu.
+            </div>
+
+            <h3>2. Vị trí tồn tại</h3>
+            <div class="formula">
+              Nơi chốn + <span class="japanese">に</span> + N (vật) +
+              <span class="japanese">があります</span> / N (người/động vật) +
+              <span class="japanese">がいます</span>
+            </div>
+            <div class="note">
+              Nhấn mạnh vào **vị trí** tồn tại của người/vật.
+            </div>
+            <div class="example">
+              <strong class="japanese">じむしょにたなかさんがいます。</strong
+              ><br />
+              → Ở văn phòng có anh Tanaka.
+            </div>
+
+            <h3>3. Danh từ chỉ vị trí (trên, dưới, trong,...)</h3>
+            <div class="formula">
+              Danh từ 1 + <span class="japanese">の</span> + Danh từ (chỉ vị
+              trí)
+            </div>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Hiragana</th>
+                  <th>Romaji</th>
+                  <th>Nghĩa</th>
+                </tr>
+                <tr>
+                  <td class="japanese">うえ</td>
+                  <td>ue</td>
+                  <td>trên</td>
+                </tr>
+                <tr>
+                  <td class="japanese">した</td>
+                  <td>shita</td>
+                  <td>dưới</td>
+                </tr>
+                <tr>
+                  <td class="japanese">まえ</td>
+                  <td>mae</td>
+                  <td>trước</td>
+                </tr>
+                <tr>
+                  <td class="japanese">うしろ</td>
+                  <td>ushiro</td>
+                  <td>sau</td>
+                </tr>
+                <tr>
+                  <td class="japanese">なか</td>
+                  <td>naka</td>
+                  <td>trong</td>
+                </tr>
+                <tr>
+                  <td class="japanese">そと</td>
+                  <td>soto</td>
+                  <td>ngoài</td>
+                </tr>
+                <tr>
+                  <td class="japanese">となり</td>
+                  <td>tonari</td>
+                  <td>bên cạnh</td>
+                </tr>
+                <tr>
+                  <td class="japanese">ちかく</td>
+                  <td>chikaku</td>
+                  <td>gần</td>
+                </tr>
+              </table>
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+              <strong class="japanese">つくえのうえにほんがあります。</strong
+              ><br />
+              → Trên bàn có quyển sách.
+            </div>
+            <div class="example">
+              <strong class="japanese"
+                >こうえんはびょういんのうしろにあります。</strong
+              ><br />
+              → Công viên có ở sau bệnh viện.
+            </div>
+          </div>
+
+          <div class="grammar-box">
+            <h2>Bài 7.2: Động từ thể <span class="japanese">て</span></h2>
+
+            <h3>1. Phân loại động từ (Nhắc lại)</h3>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Nhóm</th>
+                  <th>Đặc điểm</th>
+                  <th>Ví dụ</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    Âm trước <span class="japanese">ます</span> thuộc hàng
+                    <span class="japanese">い</span> (trừ TH đặc biệt)
+                  </td>
+                  <td class="japanese">かいます, かえります</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    Âm trước <span class="japanese">ます</span> thuộc hàng
+                    <span class="japanese">え</span> (gồm cả TH đặc biệt:
+                    <span class="japanese">みます</span>,
+                    <span class="japanese">おきます</span>,...)
+                  </td>
+                  <td class="japanese">たべます, ねます</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    Động từ bất quy tắc: <span class="japanese">します</span>,
+                    <span class="japanese">きます</span>
+                  </td>
+                  <td class="japanese">べんきょうします, にほんへきます</td>
+                </tr>
+              </table>
+            </div>
+
+            <h3>2. Cách chia thể <span class="japanese">て</span></h3>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Nhóm</th>
+                  <th>Âm cuối <span class="japanese">ます</span></th>
+                  <th>Đổi thành</th>
+                  <th>Ví dụ</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="japanese">〜い, 〜ち, 〜り</td>
+                  <td class="japanese">〜って</td>
+                  <td class="japanese">かいます → かって</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="japanese">〜み, 〜に, 〜び</td>
+                  <td class="japanese">〜んで</td>
+                  <td class="japanese">のみます → のんで</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="japanese">〜き</td>
+                  <td class="japanese">〜いて</td>
+                  <td class="japanese">かきます → かいて</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="japanese">〜ぎ</td>
+                  <td class="japanese">〜いで</td>
+                  <td class="japanese">いそぎます → いそいで</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="japanese">〜し</td>
+                  <td class="japanese">〜して</td>
+                  <td class="japanese">かします → かして</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="japanese">いきます</td>
+                  <td class="japanese">いって (TH ĐB)</td>
+                  <td class="japanese">いって</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="japanese">
+                    Bỏ <span class="japanese">ます</span>
+                  </td>
+                  <td class="japanese">〜て</td>
+                  <td class="japanese">たべます → たべて</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="japanese">します</td>
+                  <td class="japanese">して</td>
+                  <td class="japanese">べんきょうします → べんきょうして</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="japanese">きます</td>
+                  <td class="japanese">きて</td>
+                  <td class="japanese">にほんへきます → にほんへきて</td>
+                </tr>
+              </table>
+            </div>
+
+            <h3>3. Công thức với thể <span class="japanese">て</span></h3>
+            <ul>
+              <li>
+                <span class="japanese">Vて $+$ ください</span>: **Xin vui
+                lòng...** (Đề nghị lịch sự)
+                <div class="example">
+                  <strong class="japanese"
+                    >まいにち、にほんごで話してください。</strong
+                  ><br />
+                  → Hãy nói chuyện bằng tiếng Nhật hàng ngày.
+                </div>
+              </li>
+              <li>
+                <span class="japanese">Vて $+$ います</span>: **Đang...** (Hành
+                động đang diễn ra)
+                <div class="example">
+                  <strong class="japanese"
+                    >にほんごをべんきょうしています。</strong
+                  ><br />
+                  → Đang học tiếng Nhật.
+                </div>
+              </li>
+              <li>
+                <span class="japanese">Vます (bỏ ます) $+$ かた</span>: **Cách
+                làm...** (Kanji: <span class="japanese">方</span>)
+                <div class="example">
+                  <strong class="japanese"
+                    >かんじのよみかたをおしえてください。</strong
+                  ><br />
+                  → Hãy dạy cho tôi cách đọc kanji.
+                </div>
+              </li>
+              <li>
+                <span class="japanese">Vます (bỏ ます) $+$ たいです</span>:
+                **Muốn làm...** (Tính từ <span class="japanese">い</span>)
+                <div class="example">
+                  <strong class="japanese"
+                    >日本人と日本語を話したいです。</strong
+                  ><br />
+                  → Muốn nói tiếng Nhật với người Nhật.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="grammar-box">
+            <h2>Các cụm từ hay gặp</h2>
+            <div class="table-responsive">
+              <table>
+                <tr>
+                  <th>Kanji</th>
+                  <th>Hiragana</th>
+                  <th>Nghĩa</th>
+                </tr>
+                <tr>
+                  <td class="japanese">山に登ります</td>
+                  <td>やまにのぼります</td>
+                  <td>Leo núi</td>
+                </tr>
+                <tr>
+                  <td class="japanese">車に乗ります</td>
+                  <td>くるまにのります</td>
+                  <td>Lên xe</td>
+                </tr>
+                <tr>
+                  <td class="japanese">車を降ります</td>
+                  <td>くるまをおります</td>
+                  <td>Xuống xe</td>
+                </tr>
+                <tr>
+                  <td class="japanese">温泉に入ります</td>
+                  <td>おんせんにはいります</td>
+                  <td>Tắm suối nước nóng</td>
+                </tr>
+                <tr>
+                  <td class="japanese">頭が痛い</td>
+                  <td>あたまがいたい</td>
+                  <td>Đau đầu</td>
+                </tr>
+                <tr>
+                  <td class="japanese">頭がいい</td>
+                  <td>あたまがいい</td>
+                  <td>Thông minh</td>
+                </tr>
+                <tr>
+                  <td class="japanese">背が高い</td>
+                  <td>せがたかい</td>
+                  <td>Cao (dáng người)</td>
+                </tr>
+                <tr>
+                  <td class="japanese">人が多い/少ない</td>
+                  <td>ひとがおおい/すくない</td>
+                  <td>Đông/Ít người</td>
+                </tr>
+                <tr>
+                  <td class="japanese">熱があります</td>
+                  <td>ねつがあります</td>
+                  <td>Bị sốt</td>
+                </tr>
+                <tr>
+                  <td class="japanese">風邪を引きます</td>
+                  <td>かぜをひきます</td>
+                  <td>Bị cảm</td>
+                </tr>
+                <tr>
+                  <td class="japanese">気持ちがいい</td>
+                  <td>きもちがいい</td>
+                  <td>Sảng khoái, dễ chịu</td>
+                </tr>
+                <tr>
+                  <td class="japanese">天気がいい/悪い</td>
+                  <td>てんきがいい/わるい</td>
+                  <td>Thời tiết tốt/xấu</td>
+                </tr>
+              </table>
+            </div>
+            <div class="note">
+              <span class="japanese">に</span> (trợ từ chỉ thời điểm): Dùng với
+              thời gian cụ thể (VD: <span class="japanese">3がつ</span> - tháng
+              3, <span class="japanese">たんじょうび</span> - sinh nhật) hoặc số
+              lần (VD: <span class="japanese">いちにちに3かい</span> - 3
+              lần/ngày).
+            </div>
+          </div>
+        </div>
       </div>
 
       <section id="contact">
@@ -1807,9 +2816,16 @@
           buttons[i].classList.remove("active");
         });
 
-        sections[index].classList.add("active");
-        buttons[index].classList.add("active");
+        if (sections[index]) {
+          sections[index].classList.add("active");
+          buttons[index].classList.add("active");
+        }
       }
+
+      // Khởi tạo hiển thị cho Combo 1 khi tải trang
+      document.addEventListener("DOMContentLoaded", () => {
+        showSection(0);
+      });
     </script>
   </body>
 </html>
